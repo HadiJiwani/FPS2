@@ -49,6 +49,7 @@ public class bullet : MonoBehaviour
                 if (Dead2 == true)
                 {
                     Destroy(attacked.gameObject);
+                    Destroy(GameObject.FindGameObjectWithTag("HB2"));
                 }
             }
         }
