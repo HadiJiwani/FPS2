@@ -25,6 +25,7 @@ public class WASD : MonoBehaviour
     public int CH;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class WASD : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         healthbar.SetMaxHealth(maxHealth);
         CH = maxHealth;
+
     }
 
 
@@ -44,6 +46,7 @@ public class WASD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKeyDown(shootbtn))
         {
             shoot();

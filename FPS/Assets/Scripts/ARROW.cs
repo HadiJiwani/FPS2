@@ -10,6 +10,7 @@ public class ARROW : MonoBehaviour
     private bool facingright = true;
     private bool isGrounded;
     private bool canShoot;
+    private GameObject bullet;
 
     public Transform groundCheck;
     public float checkRaidius;
@@ -17,7 +18,11 @@ public class ARROW : MonoBehaviour
     public Transform player;
     public KeyCode shootbtn;
     public Transform FirePoint;
-    public GameObject bullet;
+    public Transform IP;
+    public GameObject cbullet;
+    public GameObject gbullet;
+    public GameObject canon;
+    public GameObject gun;
     public int bulletAmount = 3;
     public int reloadTime;
     public HealthBar healthbar;
@@ -103,6 +108,18 @@ public class ARROW : MonoBehaviour
         yield return new WaitForSeconds(reloadTime);
 
         bulletAmount++;
+    }
+
+    public void Canon()
+    {
+        Instantiate(canon, IP.position, IP.rotation, player);
+        bullet = cbullet;
+    }
+    
+    public void GUN()
+    {
+        Instantiate(gun, IP.position, IP.rotation, player);
+        bullet = gbullet;
     }
 
 }
